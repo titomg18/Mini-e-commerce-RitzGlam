@@ -1,4 +1,5 @@
 {
-  "promoPrice": 65000,
-  "originalPrice": 129000
+  "promoPrice": "Rp 90.000",
+  "originalPrice": "Rp 120.000",
+  "discount": "Hemat 20%!"
 }

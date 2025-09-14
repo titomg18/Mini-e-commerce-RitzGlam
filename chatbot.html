@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Rule-Based</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-pink-100 via-white to-pink-200 flex items-center justify-center h-screen">
+
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-2xl flex flex-col overflow-hidden">
+    <!-- Header -->
+    <div class="bg-pink-500 text-white text-center py-3 font-bold text-lg">
+      💬 RitzGlam Assistant
+    </div>
+
+    <!-- Chat window -->
+    <div id="chatbox" class="flex-1 overflow-y-auto p-4 h-80 space-y-3 bg-gray-50">
+      <div class="text-gray-400 text-sm text-center">Mulai chat dengan mengetik pesan...</div>
+    </div>
+
+    <!-- Input -->
+    <form id="chatForm" class="flex border-t">
+      <input id="userInput" type="text" placeholder="Tulis pesan..."
+             class="flex-1 px-4 py-3 text-sm focus:outline-none">
+      <button class="bg-pink-500 hover:bg-pink-600 text-white px-5">Kirim</button>
+    </form>
+  </div>
+
+  <script>
+    const chatbox = document.getElementById("chatbox");
+    const chatForm = document.getElementById("chatForm");
+    const userInput = document.getElementById("userInput");
+
+    chatForm.onsubmit = (e) => {
+      e.preventDefault();
+      const msg = userInput.value.trim();
+      if (!msg) return;
+
+      // tampilkan pesan user
+      appendMessage("user", msg);
+
+      // rule-based reply
+      let reply = "Maaf, saya belum mengerti pertanyaan ini.";
+      const lowerMsg = msg.toLowerCase();
+
+      if (lowerMsg.includes("harga")) {
+        reply = "Lip Serum RitzGlam mulai Rp 79.000.";
+      } else if (lowerMsg.includes("order")) {
+        reply = "Order gampang! Klik tombol WhatsApp di website kami.";
+      } else if (lowerMsg.includes("cod")) {
+        reply = "Bisa COD ke seluruh Indonesia 🚚.";
+      }
+
+      // tampilkan balasan
+      setTimeout(() => appendMessage("bot", reply), 500);
+
+      userInput.value = "";
+    };
+
+    function appendMessage(sender, text) {
+      const msgDiv = document.createElement("div");
+      msgDiv.className = "flex " + (sender === "user" ? "justify-end" : "justify-start");
+
+      const bubble = document.createElement("div");
+      bubble.className = "px-4 py-2 rounded-2xl max-w-[75%] text-sm shadow";
+
+      if (sender === "user") {
+        bubble.classList.add("bg-pink-500", "text-white", "rounded-br-none");
+      } else {
+        bubble.classList.add("bg-gray-200", "text-gray-800", "rounded-bl-none");
+      }
+
+      bubble.innerText = text;
+      msgDiv.appendChild(bubble);
+      chatbox.appendChild(msgDiv);
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+  </script>
+</body>
+</html>

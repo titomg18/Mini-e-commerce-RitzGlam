@@ -1,387 +1,485 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RitzGlam Lip Serum - Bibir Indah Seketika</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    animation: {
-                        'float': 'float 3s ease-in-out infinite',
-                        'glow': 'glow 2s ease-in-out infinite alternate',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        @keyframes glow {
-            from { box-shadow: 0 0 20px rgba(236, 72, 153, 0.5); }
-            to { box-shadow: 0 0 30px rgba(236, 72, 153, 0.8); }
-        }
-        .hero-gradient {
-            background: linear-gradient(135deg, #fce7f3 0%, #fdf2f8 50%, #fef7f7 100%);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RitzGlam Lip Serum</title>
+  <script src="https://kit.fontawesome.com/a2e0e9a64b.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="font-sans">
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <div class="flex items-center space-x-2">
-                    <i class="fas fa-gem text-pink-500 text-2xl"></i>
-                    <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">RitzGlam</span>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#hero" class="text-gray-700 hover:text-pink-500 transition-colors">Beranda</a>
-                    <a href="#benefits" class="text-gray-700 hover:text-pink-500 transition-colors">Manfaat</a>
-                    <a href="#testimonials" class="text-gray-700 hover:text-pink-500 transition-colors">Testimoni</a>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6rKqvXJ-_CEdkRNlZi7wEkw3E1-A6ZrHfdHDk0zU66_g23g/viewform?usp=dialog" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-4 py-2 rounded-lg hover:from-pink-600 hover:to-rose-600 transition-all">
-                        Pesan Sekarang
-                    </a>
-                </div>
+<body class="bg-pink-50">
 
-                <div class="md:hidden">
-                    <button onclick="toggleMenu()" class="text-gray-700">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-            <div class="px-4 py-2 space-y-2">
-                <a href="#hero" class="block py-2 text-gray-700">Beranda</a>
-                <a href="#benefits" class="block py-2 text-gray-700">Manfaat</a>
-                <a href="#testimonials" class="block py-2 text-gray-700">Testimoni</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6rKqvXJ-_CEdkRNlZi7wEkw3E1-A6ZrHfdHDk0zU66_g23g/viewform?usp=dialog" class="block py-2 text-pink-500">Pesan Sekarang</a>
-            </div>
-        </div>
+<!-- 🌸 Navbar -->
+<header class="fixed w-full top-0 z-50 bg-white/80 backdrop-blur shadow">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center py-4">
+      
+      <!-- Logo -->
+      <a href="#hero" class="text-2xl font-bold text-pink-600 flex items-center">
+        <i class="fas fa-kiss-wink-heart mr-2"></i> RitzGlam
+      </a>
+
+      <!-- Menu Desktop -->
+      <nav class="hidden md:flex items-center gap-8 text-gray-700 font-semibold">
+        <a href="#hero" class="hover:text-pink-600">Beranda</a>
+        <a href="#benefits" class="hover:text-pink-600">Manfaat</a>
+        <a href="#testimonials" class="hover:text-pink-600">Testimoni</a>
+        <a href="https://maps.app.goo.gl/8nUJv5Y71wf2DfeL9" class="hover:text-pink-600">Lokasi</a>
+      </nav>
+
+      <!-- Tombol WhatsApp (Desktop) -->
+      <a href="chatbot.html" 
+         target="_blank"
+         class="hidden md:inline-block bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition">
+        <i class="fab fa-whatsapp"></i> Chat
+      </a>
+
+      <!-- Tombol Mobile -->
+      <button id="menuBtn" class="md:hidden text-2xl text-gray-700">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t shadow-lg">
+    <nav class="flex flex-col items-center py-4 gap-4 text-gray-700 font-semibold">
+      <a href="#hero" class="hover:text-pink-600">Beranda</a>
+      <a href="#benefits" class="hover:text-pink-600">Manfaat</a>
+      <a href="#testimonials" class="hover:text-pink-600">Testimoni</a>
+      <a href="#contact" class="hover:text-pink-600">Lokasi</a>
+      <a href="https://wa.me/6281231982121" target="_blank" 
+         class="bg-green-500 text-white px-4 py-2 rounded-lg font-semibold hover:bg-green-600 transition">
+        <i class="fab fa-whatsapp"></i> Chat
+      </a>
     </nav>
+  </div>
+</header>
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero-gradient min-h-screen flex items-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="text-center lg:text-left">
-                    <div class="mb-6">
-                        <span class="inline-block bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                            ✨ New Launch - Limited Edition
-                        </span>
-                        <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
-                            <span class="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">RitzGlam</span><br>
-                            Lip Serum
-                        </h1>
-                        <p class="text-xl text-gray-600 mb-8 max-w-lg">
-                            "Rasakan manisnya Sweet Strawberry! Perpaduan stroberi segar dan 24K Gold Infusion untuk bibir lembut, berkilau alami, dan segar menggoda."
-                        </p>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row items-center gap-4 mb-8">
-                        <div class="text-center">
-                            <div class="text-3xl font-bold text-pink-600" id="promoPrice">Rp 299.000</div>
-                            <div class="text-lg text-gray-500 line-through" id="originalPrice">Rp 450.000</div>
-                            <div class="text-sm text-green-600 font-semibold" id="discount">Hemat 34%!</div>
-                        </div>
-                        <div class="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold animate-pulse">
-                            <i class="fas fa-fire mr-2"></i>
-                            Flash Sale Hari Ini!
-                        </div>
-                    </div>
+<!-- Smooth Scroll -->
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
 
-                    <div class="flex flex-col sm:flex-row gap-4">
-                    <button onclick="window.location.href='https://docs.google.com/forms/d/e/1FAIpQLSc6rKqvXJ-_CEdkRNlZi7wEkw3E1-A6ZrHfdHDk0zU66_g23g/viewform?usp=dialog'" 
-                        class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-pink-600 hover:to-rose-600 transform hover:scale-105 transition-all duration-300 shadow-xl animate-glow">
-                        <i class="fas fa-shopping-cart mr-2"></i>
-                        Pesan Sekarang
-                    </button>
+<!-- Script untuk toggle menu -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-                        <a href="https://wa.me/6281231982121?text=Halo%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20RitzGlam%20Lip%20Serum" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
-                            <i class="fab fa-whatsapp mr-2"></i>
-                            WhatsApp
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="flex justify-center">
-                    <div class="relative">
-                        <div class="absolute inset-0 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
-                        <img src="image/Sweer Strawberry.jpeg" 
-                             alt="RitzGlam Lip Serum" 
-                             class="relative w-80 h-80 object-cover rounded-full shadow-2xl animate-float">
-                        <div class="absolute top-4 right-4 bg-yellow-400 text-yellow-800 px-3 py-1 rounded-full text-sm font-bold">
-                            <i class="fas fa-star mr-1"></i>
-                            Best Seller
-                        </div>
-                    </div>
-                </div>
-            </div>
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
+
+
+<!-- Hero + Order Section -->
+<section id="hero" class="min-h-screen flex items-center pt-32 pb-20 bg-gradient-to-br from-pink-50 to-rose-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-2 gap-12 items-start">
+      
+      <!-- Kolom kiri: Gambar Produk -->
+      <div class="flex justify-center lg:justify-end">
+        <img src="image/Sweer Strawberry.jpeg" alt="RitzGlam Lip Serum" 
+             class="w-80 lg:w-[420px] drop-shadow-2xl rounded-2xl">
+      </div>
+
+      <!-- Kolom kanan -->
+      <div>
+        <!-- Deskripsi -->
+        <div class="mb-6 text-center lg:text-left">
+          <span class="inline-block bg-pink-100 text-pink-600 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            ✨ New Launch - Limited Edition
+          </span>
+          <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6 leading-tight">
+            <span class="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">RitzGlam</span><br>
+            Lip Serum
+          </h1>
+          <p class="text-xl text-gray-600 mb-8 max-w-lg">
+            "Rasakan manisnya Sweet Strawberry! Perpaduan stroberi segar dan 24K Gold Infusion untuk bibir lembut, berkilau alami, dan segar menggoda."
+          </p>
         </div>
-    </section>
 
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">
-                    Mengapa Memilih <span class="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">RitzGlam?</span>
-                </h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Formula eksklusif yang telah teruji klinis memberikan hasil instan dan jangka panjang
+        <!-- Harga -->
+        <div class="flex flex-col sm:flex-row items-center gap-4 mb-8">
+          <div class="text-center">
+            <div class="text-3xl font-bold text-pink-600" id="promoPrice">Rp 299.000</div>
+            <div class="text-lg text-gray-500 line-through" id="originalPrice">Rp 450.000</div>
+            <div class="text-sm text-green-600 font-semibold" id="discount">Hemat 34%!</div>
+          </div>
+          <div class="bg-red-500 text-white px-4 py-2 rounded-lg font-semibold animate-pulse">
+            <i class="fas fa-fire mr-2"></i>
+            Flash Sale Hari Ini!
+          </div>
+        </div>
+
+        <!-- Tombol -->
+        <div class="flex flex-wrap gap-4 mb-6">
+          <button onclick="toggleOrderForm()" 
+            class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:from-pink-600 hover:to-rose-600 transform hover:scale-105 transition-all duration-300 shadow-xl animate-glow">
+            <i class="fas fa-shopping-cart mr-2"></i>
+            Pesan Sekarang
+          </button>
+
+          <a href="https://wa.me/6281231982121?text=Halo%20saya%20ingin%20tahu%20lebih%20lanjut%20tentang%20RitzGlam%20Lip%20Serum"
+             target="_blank" 
+             class="bg-green-500 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-green-600 transform hover:scale-105 transition-all duration-300 shadow-lg">
+            <i class="fab fa-whatsapp mr-2"></i>
+            WhatsApp
+          </a>
+        </div>
+
+        <!-- Order Form -->
+        <div id="orderForm" class="mt-12 p-8 rounded-3xl shadow-xl hidden bg-white/80 backdrop-blur">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Form Order</h3>
+          <form id="checkoutForm" onsubmit="submitOrder(event)" class="space-y-4">
+            <input type="text" name="nama" placeholder="Nama Lengkap" required 
+                   class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-pink-500">
+            <input type="email" name="email" placeholder="Email" required 
+                   class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-pink-500">
+            <input type="text" name="telepon" placeholder="No. HP / WhatsApp" required 
+                   class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-pink-500">
+            <textarea name="alamat" placeholder="Alamat Lengkap" required 
+                      class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-pink-500"></textarea>
+            <input type="number" name="jumlah" value="1" min="1" required 
+                   class="w-full px-4 py-3 border rounded-xl focus:ring-2 focus:ring-pink-500">
+
+            <button type="submit" 
+                    class="w-full bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-rose-600">
+              Kirim Pesanan
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function toggleOrderForm() {
+  const form = document.getElementById('orderForm');
+  form.classList.toggle('hidden');
+}
+
+async function submitOrder(e) {
+  e.preventDefault();
+  const form = document.getElementById('checkoutForm');
+  const formData = new FormData(form);
+
+  const params = new URLSearchParams();
+  formData.forEach((value, key) => {
+    params.append(key, value);
+  });
+
+  try {
+    const res = await fetch("https://script.google.com/macros/s/AKfycbyryI4ARf1WccJoWrAd4O5M0MB-NEuoRodQqpZpadLcdUzH_wPkGvGzJmkPbom5MdfN/exec", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString()
+    });
+
+    const data = await res.json();
+    if (data.result === "success") {
+      alert("✅ Pesanan berhasil dikirim!");
+      form.reset();
+      document.getElementById('orderForm').classList.add('hidden');
+    } else {
+      alert("❌ Gagal: " + JSON.stringify(data));
+    }
+  } catch (err) {
+    alert("⚠ Error: " + err.message);
+  }
+}
+
+// Toggle Mobile Menu
+document.getElementById("menuBtn").addEventListener("click", () => {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+});
+</script>
+
+<!-- Benefits Section -->
+<section id="benefits" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                Mengapa Memilih <span class="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">RitzGlam?</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Setiap tetes RitzGlam dirancang dengan formula eksklusif yang menggabungkan sains modern dan bahan alami premium, 
+                memberikan hasil nyata yang bisa dirasakan sejak pemakaian pertama.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Card 1 -->
+            <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-magic text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Hasil Instan</h3>
+                <p class="text-gray-600">
+                    Rasakan sensasi bibir lebih lembut, kenyal, dan bervolume hanya dalam hitungan menit. 
+                    <b>Instant Plumping Complex</b> bekerja cepat menutrisi serta memberikan efek penuh yang natural.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-magic text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Hasil Instan</h3>
-                    <p class="text-gray-600">
-                        Bibir langsung terasa lembut dan terlihat bervolume dalam 5 menit pertama penggunaan berkat teknologi Instant Plumping Complex.
-                    </p>
+            <!-- Card 2 -->
+            <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-gem text-white text-2xl"></i>
                 </div>
-
-                <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-gem text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">24K Gold Infusion</h3>
-                    <p class="text-gray-600">
-                        Diperkaya dengan partikel emas 24K yang memberikan kilau mewah dan merangsang regenerasi sel untuk bibir yang awet muda.
-                    </p>
-                </div>
-
-                <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-shield-alt text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Long Lasting</h3>
-                    <p class="text-gray-600">
-                        Formula tahan lama hingga 12 jam tanpa perlu reapply. Waterproof dan smudgeproof untuk aktivitas sepanjang hari.
-                    </p>
-                </div>
-
-                <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-leaf text-white text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Natural & Safe</h3>
-                    <p class="text-gray-600">
-                        100% bahan alami premium seperti Hyaluronic Acid, Vitamin E, dan Collagen Peptides. Aman untuk penggunaan harian.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-20 bg-gradient-to-br from-pink-50 to-rose-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold text-gray-800 mb-4">
-                    Apa Kata <span class="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">Customer Kami?</span>
-                </h2>
-                <p class="text-xl text-gray-600">Ribuan wanita telah merasakan transformasi bibir yang luar biasa</p>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">24K Gold Infusion</h3>
+                <p class="text-gray-600">
+                    Diperkaya dengan partikel emas murni 24K yang memberikan kilau mewah pada bibir, 
+                    sekaligus membantu mempercepat regenerasi sel sehingga bibir tampak lebih segar dan awet muda.
+                </p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-3xl shadow-xl transform hover:scale-105 transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?cs=srgb" 
-                             alt="Sarah M." 
-                             class="w-16 h-16 rounded-full object-cover mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Sarah Maharani</h4>
-                            <p class="text-gray-600 text-sm">Beauty Influencer</p>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "OMG! RitzGlam Lip Serum ini beneran game changer! Bibir aku yang tadinya kering dan pecah-pecah, sekarang jadi super lembut dan bervolume natural. Followers IG aku sampai nanya pakai apa! 💕"
-                    </p>
+            <!-- Card 3 -->
+            <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-shield-alt text-white text-2xl"></i>
                 </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl transform hover:scale-105 transition-all duration-300">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" 
-                             alt="Diana P." 
-                             class="w-16 h-16 rounded-full object-cover mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Diana Putri</h4>
-                            <p class="text-gray-600 text-sm">Marketing Executive</p>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Sebagai working mom yang sibuk, aku butuh produk yang praktis tapi hasilnya wow! RitzGlam Lip Serum ini perfect banget. Sekali pakai langsung glowing, tahan seharian full meeting. Worth it banget!"
-                    </p>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-xl transform hover:scale-105 transition-all duration-300 md:col-span-2 lg:col-span-1">
-                    <div class="flex items-center mb-6">
-                        <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=face" 
-                             alt="Rina K." 
-                             class="w-16 h-16 rounded-full object-cover mr-4">
-                        <div>
-                            <h4 class="font-bold text-gray-800">Rina Kusuma</h4>
-                            <p class="text-gray-600 text-sm">Content Creator</p>
-                            <div class="flex text-yellow-400 mt-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-gray-700 italic">
-                        "Udah cobain banyak lip product, tapi RitzGlam ini beda! Teksturnya premium banget, wanginya juga enak. Yang paling aku suka, efek plumping-nya natural, bukan fake gitu. Recommended!"
-                    </p>
-                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Long Lasting</h3>
+                <p class="text-gray-600">
+                    Formula tahan lama hingga 12 jam, dengan perlindungan waterproof dan smudgeproof. 
+                    Tidak perlu sering reapply, bibir tetap terjaga indah sepanjang hari meski beraktivitas padat.
+                </p>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
-                        <i class="fas fa-gem text-pink-500 text-2xl"></i>
-                        <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">RitzGlam</span>
-                    </div>
-                    <p class="text-gray-400 mb-4">
-                        Premium beauty products untuk wanita modern yang ingin tampil percaya diri setiap hari.
-                    </p>
-                    <div class="flex space-x-4">
-                        <i class="fab fa-instagram text-pink-500 text-xl cursor-pointer hover:text-pink-400"></i>
-                        <i class="fab fa-facebook text-pink-500 text-xl cursor-pointer hover:text-pink-400"></i>
-                        <i class="fab fa-tiktok text-pink-500 text-xl cursor-pointer hover:text-pink-400"></i>
-                    </div>
+            <!-- Card 4 -->
+            <div class="group bg-gradient-to-br from-pink-50 to-rose-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                <div class="bg-gradient-to-r from-pink-500 to-rose-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-leaf text-white text-2xl"></i>
                 </div>
-                
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Kontak Kami</h4>
-                    <div class="space-y-2 text-gray-400">
-                        <div class="flex items-center">
-                            <i class="fab fa-whatsapp text-green-500 mr-2"></i>
-                            <a href="https://wa.me/6281231982121" class="hover:text-white">+62 812-3198-2121</a>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-envelope text-pink-500 mr-2"></i>
-                            <a href="mailto:info@ritzglam.com" class="hover:text-white">info@ritzglam.com</a>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-pink-500 mr-2"></i>
-                            <span>Jakarta, Indonesia</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
-                    <div class="space-y-2 text-gray-400">
-                        <a href="#hero" class="block hover:text-white">Beranda</a>
-                        <a href="#benefits" class="block hover:text-white">Manfaat</a>
-                        <a href="#testimonials" class="block hover:text-white">Testimoni</a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-xl font-bold mb-4">Jaminan Kami</h4>
-                    <div class="space-y-2 text-gray-400 text-sm">
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>100% Original</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>Garansi Uang Kembali</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check text-green-500 mr-2"></i>
-                            <span>Gratis Ongkir</span>
-                        </div>
-                    </div>
-                </div>
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Natural & Safe</h3>
+                <p class="text-gray-600">
+                    Kombinasi <b>Hyaluronic Acid, Vitamin E,</b> dan <b>Collagen Peptides</b> dari bahan alami pilihan 
+                    menjadikan serum ini aman digunakan setiap hari tanpa menimbulkan efek samping.
+                </p>
             </div>
-            
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-                <p>&copy; 2025 RitzGlam. All rights reserved. | Made with ❤️ for beautiful women</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
-        <div class="bg-white p-8 rounded-3xl max-w-md mx-4 text-center transform scale-95">
-            <div class="text-6xl text-green-500 mb-4">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Pesanan Berhasil!</h3>
-            <p class="text-gray-600 mb-6">
-                Terima kasih! Pesanan Anda telah kami terima. Tim kami akan segera menghubungi Anda melalui WhatsApp untuk konfirmasi pengiriman.
-            </p>
-            <button onclick="closeModal()" class="bg-gradient-to-r from-pink-500 to-rose-500 text-white px-6 py-3 rounded-xl font-semibold hover:from-pink-600 hover:to-rose-600">
-                Tutup
-            </button>
         </div>
     </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="py-20 bg-gradient-to-br from-pink-50 to-rose-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Heading -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                Apa Kata <span class="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">Customer Kami?</span>
+            </h2>
+            <p class="text-xl text-gray-600">
+                Ribuan wanita sudah jatuh cinta dengan RitzGlam Lip Serum, kini giliran kamu merasakannya ✨
+            </p>
+        </div>
+
+        <!-- Testimonials Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <img src="https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?cs=srgb" 
+                         alt="Sarah M." 
+                         class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-800">Sarah Maharani</h4>
+                        <p class="text-gray-600 text-sm">Beauty Influencer</p>
+                        <div class="flex text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">
+                    "OMG! RitzGlam Lip Serum ini beneran <b>game changer</b>! Bibir aku yang tadinya kering, pecah-pecah, bahkan sering berdarah, sekarang jadi super lembut, lembap, dan warnanya natural banget. 
+                    Setelah rutin pakai, hasilnya bikin percaya diri di depan kamera, followers aku sampai DM nanya pakai produk apa. 
+                    Rasanya kayak punya bibir baru, dan aku gak bisa berhenti rekomendasiin ke teman-teman!"
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl transform hover:scale-105 transition-all duration-300">
+                <div class="flex items-center mb-6">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" 
+                         alt="Diana P." 
+                         class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-800">Diana Putri</h4>
+                        <p class="text-gray-600 text-sm">Marketing Executive</p>
+                        <div class="flex text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">
+                    "Sebagai working mom yang super sibuk, aku butuh produk simpel tapi hasilnya nyata. 
+                    RitzGlam Lip Serum langsung jadi andalan aku karena <b>sekali swipe langsung kelihatan sehat & glowing</b>. 
+                    Dipakai dari pagi sebelum meeting sampai sore tetap lembap, gak perlu retouch berkali-kali. 
+                    Buat aku yang jarang punya waktu, ini benar-benar penyelamat. Worth every penny!"
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-8 rounded-3xl shadow-xl transform hover:scale-105 transition-all duration-300 md:col-span-2 lg:col-span-1">
+                <div class="flex items-center mb-6">
+                    <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?w=100&h=100&fit=crop&crop=face" 
+                         alt="Rina K." 
+                         class="w-16 h-16 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-bold text-gray-800">Rina Kusuma</h4>
+                        <p class="text-gray-600 text-sm">Content Creator</p>
+                        <div class="flex text-yellow-400 mt-1">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">
+                    "Aku udah coba banyak lip product dari brand lokal sampai luar negeri, tapi RitzGlam ini beda banget. 
+                    Teksturnya ringan tapi mewah, wanginya soft bikin nyaman, dan efek <b>plumping-nya natural</b>, gak bikin aneh atau terlalu berlebihan. 
+                    Bahkan setelah makan & minum, bibir tetap lembap. Sekarang aku udah gak bisa keluar rumah tanpa ini. Super recommended!"
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+ 
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            
+            <!-- Brand -->
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <i class="fas fa-gem text-pink-500 text-2xl"></i>
+                    <span class="text-2xl font-bold bg-gradient-to-r from-pink-500 to-rose-600 bg-clip-text text-transparent">RitzGlam</span>
+                </div>
+                <p class="text-gray-400 mb-4">
+                    Premium beauty products untuk wanita modern yang ingin tampil percaya diri setiap hari.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#" class="hover:text-pink-400"><i class="fab fa-instagram text-pink-500 text-xl"></i></a>
+                    <a href="#" class="hover:text-pink-400"><i class="fab fa-facebook text-pink-500 text-xl"></i></a>
+                    <a href="#" class="hover:text-pink-400"><i class="fab fa-tiktok text-pink-500 text-xl"></i></a>
+                </div>
+            </div>
+
+            <!-- Kontak -->
+            <div>
+                <h4 class="text-xl font-bold mb-4">Kontak Kami</h4>
+                <div class="space-y-2 text-gray-400">
+                    <div class="flex items-center">
+                        <i class="fab fa-whatsapp text-green-500 mr-2"></i>
+                        <a href="https://wa.me/6281231982121" class="hover:text-white">+62 812-3198-2121</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope text-pink-500 mr-2"></i>
+                        <a href="mailto:info@ritzglam.com" class="hover:text-white">info@ritzglam.com</a>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-map-marker-alt text-pink-500 mr-2"></i>
+                        <span>Jakarta, Indonesia</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Links -->
+            <div>
+                <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                <div class="space-y-2 text-gray-400">
+                    <a href="#hero" class="block hover:text-white">Beranda</a>
+                    <a href="#benefits" class="block hover:text-white">Manfaat</a>
+                    <a href="#testimonials" class="block hover:text-white">Testimoni</a>
+                </div>
+            </div>
+
+            <!-- Jaminan -->
+            <div>
+                <h4 class="text-xl font-bold mb-4">Jaminan Kami</h4>
+                <div class="space-y-2 text-gray-400 text-sm">
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>100% Original</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Garansi Uang Kembali</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-check text-green-500 mr-2"></i>
+                        <span>Gratis Ongkir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <p>&copy; 2025 RitzGlam. All rights reserved. | Made with ❤ for beautiful women</p>
+        </div>
+    </div>
+</footer>
+
+<!-- <script>
+// Ambil harga promo dari promo.json
+async function loadPromo() {
+  try {
+    const res = await fetch("promo.json"); // file lokal
+    const data = await res.json();
+
+    // Update elemen harga di halaman
+    document.getElementById("promoPrice").innerText = data.promoPrice;
+    document.getElementById("originalPrice").innerText = data.originalPrice;
+    document.getElementById("discount").innerText = data.discount;
+
+  } catch (err) {
+    console.error("Gagal load promo:", err);
+  }
+}
+
+// Panggil saat halaman sudah siap
+document.addEventListener("DOMContentLoaded", loadPromo);
+</script> -->
+
 
 <script>
-    // Mobile menu toggle
-    function toggleMenu() {
-        const menu = document.getElementById('mobileMenu');
-        menu.classList.toggle('hidden');
-    }
+async function loadPromoFromAPI() {
+  try {
+    const res = await fetch("https://dummyjson.com/products/1");
+    const data = await res.json();
 
-    // Smooth scroll to order section
-    function scrollToOrder() {
-        document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
-    }
+    // Format harga (biar mirip Rupiah)
+    const hargaPromo = "Rp " + (data.price * 1000).toLocaleString("id-ID");
+    const hargaAsli = "Rp " + ((data.price * 1000) * 1.5).toLocaleString("id-ID");
+    const diskon = "Hemat 33%!";
 
-    // Fetch promo price dari dummy JSON
-    async function fetchPromoPrice() {
-        try {
-            // Ganti dengan API asli kalau sudah ada
-            const response = await fetch('promo.json'); 
-            const data = await response.json();
+    // Update ke elemen HTML
+    document.getElementById("promoPrice").innerText = hargaPromo;
+    document.getElementById("originalPrice").innerText = hargaAsli;
+    document.getElementById("discount").innerText = diskon;
 
-            // Update harga
-            document.getElementById('promoPrice').innerText = `Rp ${data.promoPrice.toLocaleString("id-ID")}`;
-            document.getElementById('originalPrice').innerText = `Rp ${data.originalPrice.toLocaleString("id-ID")}`;
+  } catch (err) {
+    console.error("Gagal fetch API:", err);
+  }
+}
 
-            // Hitung diskon
-            const discountPercent = Math.round(((data.originalPrice - data.promoPrice) / data.originalPrice) * 100);
-            document.getElementById('discount').innerText = `Hemat ${discountPercent}%!`;
-        } catch (error) {
-            console.error("Error fetching promo price:", error);
-        }
-    }
-
-    // Panggil saat load
-    window.onload = fetchPromoPrice;
+// jalankan saat halaman load
+document.addEventListener("DOMContentLoaded", loadPromoFromAPI);
 </script>
+
+
+</body>
+</html>
